@@ -47,9 +47,9 @@ function equipBestSword() {
   }
 }
 
-function attack(entiy){
+function attack(entity){
 
-      bot.attack(entiy);
+      bot.attack(entity);
 
 }
 
