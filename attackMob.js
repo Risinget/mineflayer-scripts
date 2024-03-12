@@ -5,8 +5,8 @@ const Vec3 = require('vec3')
 let entityTrackName = 'zombie' //This word in lowercase ensure
 let radiusToDetect = 5 //Default and bypass any suspicious
 const bot = mineflayer.createBot({
-  host: "172.233.188.131",
-  port: 25567,
+  host: "localhost1",
+  port: 25565,
   username: "username1234",
 });
 
