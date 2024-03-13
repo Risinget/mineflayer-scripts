@@ -3,3 +3,8 @@
 
 !.gitignore
 !attackMob.js
+!MinerRecursive.js
+!MineACube.js
+!ChatColorInteract.js
+!FillACubeEmpty.js
+!package.json
