@@ -2,12 +2,9 @@ const mineflayer = require("mineflayer");
 const { pathfinder, Movements } = require("mineflayer-pathfinder");
 const { GoalNear } = require("mineflayer-pathfinder").goals;
 const Vec3 = require("vec3");
+const config = require("./config.json");
 
-const bot = mineflayer.createBot({
-  host: "172.233.188.131",
-  port: 25567,
-  username: "username1234",
-});
+const bot = mineflayer.createBot(config);
 
 bot.loadPlugin(pathfinder);
 
@@ -16,8 +13,8 @@ bot.once("spawn", () => {
   const movements = new Movements(bot, mcData);
   bot.pathfinder.setMovements(movements);
 
-  const start = new Vec3(351, 134, -337);
-  const end = new Vec3(336, -59, -352);
+  const start = new Vec3(-258, 108, -75);
+  const end = new Vec3(-255, 108, -69);
 
   mineArea(start, end).then(() => {
     console.log("Área minada completamente.");
@@ -45,7 +42,11 @@ async function mineArea(start, end) {
             await bot.equip(bestTool, "hand");
           }
           try {
-            await bot.dig(block);
+            console.log(
+              block.displayName + " " + bot.digTime(block) / 1000 + " seconds"
+            );
+            bot.swingArm("right"); // Agrega esta línea para la animación
+            await bot.dig(block, true, 'raycast');
             console.log(
               `Bloque en ${blockPos} picado con ${
                 bestTool ? bestTool.name : "sin herramienta"

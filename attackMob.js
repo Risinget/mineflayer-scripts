@@ -1,16 +1,10 @@
 const mineflayer = require("mineflayer");
 const Vec3 = require('vec3')
+const config = require("./config.json");
 
-
-let entityTrackName = 'zombie' //This word in lowercase ensure
+let entityTrackName = "wither_skeleton"; //This word in lowercase ensure
 let radiusToDetect = 5 //Default and bypass any suspicious
-const bot = mineflayer.createBot({
-  host: "localhost1",
-  port: 25565,
-  username: "username1234",
-});
-
-
+const bot = mineflayer.createBot(config);
 
 bot.once("physicsTick", () => {
   console.log("Bot conectado y listo para la acción!");
@@ -59,6 +53,8 @@ function attackNearestZombie() {
 
 
     const entityToTrack = bot.nearestEntity((entity) => {
+      // console.log(entity.name.toLowerCase());
+      
     return (
         entity.name.toLowerCase() == entityTrackName &&
         entity.position.distanceTo(bot.entity.position) <= radiusToDetect

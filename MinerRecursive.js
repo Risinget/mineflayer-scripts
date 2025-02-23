@@ -4,13 +4,9 @@ const {
   Movements,
   goals: { GoalNear },
 } = require("mineflayer-pathfinder");
+const config = require("./config.json");
 
-const bot = mineflayer.createBot({
-  host: "172.233.188.131",
-  port: 49999,
-  username: "username1234",
-  version: "1.20.1",
-});
+const bot = mineflayer.createBot(config);
 const mcData = require("minecraft-data")(bot.version);
 
 bot.loadPlugin(pathfinder);

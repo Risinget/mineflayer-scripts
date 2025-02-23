@@ -1,11 +1,7 @@
 const mineflayer = require('mineflayer');
-
+const config = require('./config.json');
 // Crea un bot con las opciones de configuración.
-const bot = mineflayer.createBot({
-  host: "172.233.188.131",
-  port: 25567,
-  username: "TenorioR3Q",
-});
+const bot = mineflayer.createBot(config);
 
 // Escucha el evento de chat y muestra los mensajes en consola.
 bot.on('chat', (username, message) => {

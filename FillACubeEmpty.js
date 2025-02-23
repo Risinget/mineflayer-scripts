@@ -2,12 +2,9 @@ const mineflayer = require("mineflayer");
 const { pathfinder, Movements } = require("mineflayer-pathfinder");
 const { GoalNear } = require("mineflayer-pathfinder").goals;
 const Vec3 = require("vec3");
+const config = require("./config.json");
 
-const bot = mineflayer.createBot({
-  host: "172.233.188.131",
-  port: 25567,
-  username: "username1234",
-});
+const bot = mineflayer.createBot(config);
 
 bot.loadPlugin(pathfinder);
 
@@ -22,10 +19,8 @@ bot.once("spawn", async () => {
     // const start = new Vec3(348 ,150, -282);
     // const end = new Vec3(341, 153, -284);
 
-     const start = new Vec3(353, 150,-280);
-     const end = new Vec3( 341, 153,-281);
-    
-
+     const start = new Vec3(-248, 115, -68);
+     const end = new Vec3( -258, 114, -75);
 
   const blockName = "stone";
   const blockToPlace = bot.inventory

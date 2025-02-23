@@ -5,13 +5,9 @@ const {
   goals: { GoalBlock },
 } = require("mineflayer-pathfinder");
 const moment = require('moment'); // Asegúrate de tener 'moment' instalado para manejar fechas y horas
+const config = require("./config.json");
 
-
-const bot = mineflayer.createBot({
-  host: "172.233.188.131", // Servidor de Minecraft
-  port: 49999, // Puerto del servidor
-  username: "username1234", // Nombre de usuario o correo electrónico para cuentas premium
-});
+const bot = mineflayer.createBot(config);
 
 bot.loadPlugin(pathfinder);
 

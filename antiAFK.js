@@ -1,14 +1,7 @@
 const mineflayer = require("mineflayer");
-
+const config = require("./config.json");
 // Configura aquí los detalles de tu bot
-const bot = mineflayer.createBot({
-    host: 'scalatest.duckdns.org',
-    port: 2363,
-    auth: 'offline',
-    username: 'RisingetT3Q',
-    version: '1.21.4',
-    profilesFolder: './profiles',
-})
+const bot = mineflayer.createBot(config)
 
 // El bot ha entrado al servidor
 bot.once("spawn", () => {

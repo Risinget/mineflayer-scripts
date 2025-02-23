@@ -1,0 +1,9 @@
+{
+    "host": "yourserver.com",
+    "port": 25565,
+    "auth": "offline",
+    "username": "yourusername",
+    "version": "1.21.4",
+    "profilesFolder": "./profiles"
+    // and others fields
+}
