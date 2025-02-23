@@ -1,10 +1,12 @@
 {
   "dependencies": {
+    "@google/generative-ai": "^0.22.0",
     "body-parser": "^1.20.2",
+    "dotenv": "^16.4.7",
     "ejs": "^3.1.9",
     "express": "^4.18.3",
     "method-override": "^3.0.0",
-    "mineflayer": "^4.20.0",
+    "mineflayer": "^4.26.0",
     "mineflayer-armor-manager": "^2.0.1",
     "mineflayer-collectblock": "^1.4.1",
     "mineflayer-cuboid": "^1.0.1",
